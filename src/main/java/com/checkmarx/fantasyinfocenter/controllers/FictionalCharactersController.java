@@ -5,10 +5,11 @@ import com.checkmarx.fantasyinfocenter.models.FictionalCharacter;
 import com.checkmarx.fantasyinfocenter.repositories.FictionalCharactersRepository;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-@Controller
+import javax.validation.Valid;
+
+@RestController
 @RequestMapping("/fictional-characters")
 public class FictionalCharactersController {
 
@@ -21,7 +22,8 @@ public class FictionalCharactersController {
     }
 
     @PostMapping("")
-    public @ResponseBody FictionalCharacter addNewFictionalCharacter(@RequestBody FictionalCharacterPostDto fictionalCharacterPostDto) {
+    public @ResponseBody FictionalCharacter addNewFictionalCharacter(
+            @Valid @RequestBody FictionalCharacterPostDto fictionalCharacterPostDto) {
         FictionalCharacter fictionalCharacter = new FictionalCharacter();
         BeanUtils.copyProperties(fictionalCharacterPostDto, fictionalCharacter);
         return fictionalCharacter;
