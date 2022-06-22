@@ -1,6 +1,6 @@
 # The Fantasy Info Center API, in Java with Spring Boot
 
-This project aims to show the many practices our clients at Checkmarx use in their projects. This can be useful to develop custom CxQL queries.
+This project aims to show the many practices our clients at Checkmarx use in their projects. This can be useful to develop custom CxQL queries and show our clients demos.
 
 The statement for this project can be:
 
