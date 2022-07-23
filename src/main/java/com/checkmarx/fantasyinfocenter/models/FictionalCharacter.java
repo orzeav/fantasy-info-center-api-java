@@ -24,6 +24,6 @@ public class FictionalCharacter {
     @NotBlank(message = "Name is mandatory")
     private String name;
 
-    @Pattern(regexp = "(\\d{4})(0[1-9]|1[0-2])(\\d{4})")
+    @Pattern(regexp = "(\\d{4})(0[1-9]|1[0-2])(\\d{2})", message = "Date of Birth should be in the YYYY-MM-DD format.")
     private String dateOfBirth;
 }
